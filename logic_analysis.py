@@ -26,7 +26,7 @@ def main():
     valid_solutions = find_valid_solutions(premises, conclusion)
 
     if len(valid_solutions) < 1:
-        print("There are no possible solutions. This is not logically valid.")
+        print("There are no possible solutions. This is logically invalid")
     else:
         print("Here are some valid solutions:")
 
@@ -58,6 +58,7 @@ def get_premises(platform):
 
     is_done = False
     while not is_done:
+        clear_console(platform)
         print("Current premises:")
         for premise in premises:
             print(premise)
@@ -67,7 +68,6 @@ def get_premises(platform):
             is_done = True
         else:
             premises.append(new_premise)
-        clear_console(platform)
 
     return premises
 
